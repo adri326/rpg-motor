@@ -1,7 +1,9 @@
 <?php session_start();
 
-$party = $_GET['party']*1;
-$player = $_GET['player']*1;
+$party = $invID = str_pad($_GET['party']*1, 4, '0', STR_PAD_LEFT);
+$player = $invID = str_pad($_GET['player']*1, 4, '0', STR_PAD_LEFT);
+
+
 
 ?>
 <!DOCTYPE html>
