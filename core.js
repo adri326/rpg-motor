@@ -4,8 +4,8 @@ function onHttpAnswer() {
   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
     var response = xhr.responseText;
     if (request == "firstSetup") {
-      var jsonResponse = JSON.decode(response);
-      console.log(jsonResponse);
+      //var jsonResponse = JSON.decode(response);
+      console.log(response);
     }
   }
 }
