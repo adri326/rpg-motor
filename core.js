@@ -7,6 +7,7 @@ function onHttpAnswer() {
       var jsonResponse = JSON.decode(response);
       console.log(jsonResponse);
     }
+  }
 }
 
 var xhr = new XmlHttpRequest();
