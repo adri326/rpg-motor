@@ -36,13 +36,13 @@ function update() {
 }
 
 function draw() {
-  canvas = document.getElementById('canvas');
-  ctx = canvas.getContext2D();
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   console.log('drawed');
 }
 
 function init() {
+  canvas = document.getElementById('canvas');
+  ctx = canvas.getContext2D();
   loop = setInterval(update, 5000);
   canvas.onload = draw;
 }
