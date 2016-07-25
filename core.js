@@ -42,7 +42,7 @@ function draw() {
 
 function init() {
   canvas = document.getElementById('canvas');
-  ctx = canvas.getContext2D();
+  ctx = canvas.getContext("2d");
   loop = setInterval(update, 5000);
   canvas.onload = draw;
 }
