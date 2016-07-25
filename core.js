@@ -10,7 +10,7 @@ function onHttpAnswer() {
 }
 
 var xhr = new XmlHttpRequest();
-xhr.open("GET", "parties/"party+"/setup.json");
+xhr.open("GET", "parties/"+party+"/setup.json");
 var request = "firstSetup";
 xhr.addEventListener("http", onHttpAnswer());
 xhr.send();
