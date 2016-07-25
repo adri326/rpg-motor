@@ -35,8 +35,15 @@ function update() {
   xhr.send();
 }
 
+function image(n) {
+  var img = new Image();
+  img.src = n+".jpg";
+  return img;
+}
+
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(image(1), 0, 0);
   console.log('drawed');
 }
 
