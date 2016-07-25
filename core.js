@@ -1,22 +1,54 @@
 var canvas, map, setup, xhr, players;
 var xhr = new XMLHttpRequest();
 var request = "firstSetup";
+var loop;
+
+
 
 function onHttpAnswer() {
   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
     var response = xhr.responseText;
-    if (request == "firstSetup") {
-      var jsonResponse = JSON.parse(response);
-      console.log(response);
-      console.log(jsonResponse);
-      setup = jsonResponse;
+    if (request == "setup" || request == "firstSetup") {
+      setup = JSON.parse(response);
+      if (request == "firstSetup") {
+        request = "firstMap";
+      } else {
+        request = "map";
+      }
+      xhr.open("GET", "parties/"+party+"/map/"+setup.map+".json");
+      xhr.send();
+    }
+    if (request == "map" || request == "firstMap") {
+      map = JSON.parse(response);
+      if (request == "firstMap") {
+        init();
+      }
     }
   } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status != 200) {
     console.log(xhr);
   }
 }
 
+function update() {
+  request = "setup";
+  xhr.open("GET", "parties/"+party+"/setup.json");
+  xhr.send();
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  console.log('drawed');
+}
+
+function init() {
+  loop = setInterval(update, 5000);
+  canvas.onLoad = draw;
+}
+
 xhr.onloadend = onHttpAnswer;
 
 xhr.open("GET", "parties/"+party+"/setup.json");
 xhr.send();
+
+canvas = document.getElementById('canvas');
+cts = canvas.getContext2D();
