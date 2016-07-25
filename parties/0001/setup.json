@@ -1,3 +1,5 @@
-"imageset": "ressources/images/basic-16",
-"partyname": "First test",
-"players": false
+{  
+   "imageset":"ressources/images/basic-16",
+   "partyname":"First test",
+   "players":false
+}
