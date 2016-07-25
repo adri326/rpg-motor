@@ -16,7 +16,7 @@ function onHttpAnswer() {
   }
 }
 
-xhr.addEventListener("readystatechange", onHttpAnswer());
+xhr.onloadend = onHttpAnswer;
 
 xhr.open("GET", "parties/"+party+"/setup.json");
 xhr.send();
