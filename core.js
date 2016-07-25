@@ -36,13 +36,15 @@ function update() {
 }
 
 function draw() {
+  canvas = document.getElementById('canvas');
+  ctx = canvas.getContext2D();
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   console.log('drawed');
 }
 
 function init() {
   loop = setInterval(update, 5000);
-  canvas.onLoad = draw;
+  canvas.onload = draw;
 }
 
 xhr.onloadend = onHttpAnswer;
@@ -50,5 +52,4 @@ xhr.onloadend = onHttpAnswer;
 xhr.open("GET", "parties/"+party+"/setup.json");
 xhr.send();
 
-canvas = document.getElementById('canvas');
-cts = canvas.getContext2D();
+
