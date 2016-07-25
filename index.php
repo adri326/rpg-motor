@@ -1,11 +1,7 @@
 <?php session_start();
 
-function filter_numbers($string) {
-  return filter_var($string, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"(0-9)")));
-}
-
-$party = filter_numbers($_GET['party']);
-$player = filter_numbers($_GET['player']);
+$party = $_GET['party']*1;
+$player = $_GET['player']*1;
 
 ?>
 <!DOCTYPE html>
