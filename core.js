@@ -5,7 +5,7 @@ function onHttpAnswer() {
   if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
     var response = xhr.responseText;
     if (request == "firstSetup") {
-      var jsonResponse = JSON.decode(response);
+      var jsonResponse = JSON.parse(response);
       console.log(response);
       console.log(jsonResponse);
     }
