@@ -37,7 +37,7 @@ function update() {
 
 function image(n) {
   var img = new Image();
-  img.src = setup.imageset+"/"+n+".jpg";
+  img.src = setup.imageset+"/"+n+".png";
   return img;
 }
 
