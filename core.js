@@ -25,7 +25,7 @@ var canvas, map, setup, xhr, players;
 var xhr = new XMLHttpRequest();
 var request = "firstSetup";
 var loop;
-
+var ix = 0, iy = 0, tileSize = 16, width, height;
 
 
 function onHttpAnswer() {
@@ -66,8 +66,26 @@ function image(n) {
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(image(1), 0, 0);
-  console.log('drawed');
+  
+  width = canvas.width;
+  height = canvas.height;
+  
+  var sx = Math.round(ix/tileSize-1.5);
+  var sy = Math.round(iy/tileSize-1.5);
+  var ex = Math.round((ix+sizeX)/tileSize+à.5);
+  var ey = Math.round((ix+sizeX)/tileSize+à.5);
+  var xo = ix%tileSize;
+  var yo = iy%tileSize;
+  for (var x = 0; x < map.length; x++) {
+    for (var y = 0; y < map[x].length; y++) {
+      for (var z = 0; z < map[y][x].length; z++) {
+        ctx.drawImage(image(map[y][x][z]), x*xs+xo-ix, y*ys+yo-iy, tileSize, tileSize);
+      }
+    }
+  }
+  
+  
+  
   requestAnimationFrame(draw);
 }
 
