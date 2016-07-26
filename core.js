@@ -79,7 +79,7 @@ function draw() {
   for (var x = 0; x < map.length; x++) {
     for (var y = 0; y < map[x].length; y++) {
       for (var z = 0; z < map[y][x].length; z++) {
-        ctx.drawImage(image(map[y][x][z]), x*xs+xo-ix, y*ys+yo-iy, tileSize, tileSize);
+        ctx.drawImage(image(map[y][x][z]), x*sx+xo-ix, y*sy+yo-iy, tileSize, tileSize);
       }
     }
   }
