@@ -26,7 +26,8 @@
         var img = document.getElementById(y+"-"+x);
         var nval = prompt("What value to set?", "0");
         img.src = starter+nval+".png";
-        map[y][x][0] = nval;
+        img.alt = nval;
+        map[y][x][0] = parseInt(nval, 10);
       }
       function changeSize() {
         width = document.getElementById('width').value;
