@@ -37,7 +37,7 @@
       <br />
       <input type="text" id="height" />
       <br />
-      <div onclick="newSize();">Change size</div>
+      <div onclick="changeSize();">Change size</div>
     </form>
   </body>
 </html>
