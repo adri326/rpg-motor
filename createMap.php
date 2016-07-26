@@ -8,7 +8,7 @@
       var starter = "ressources/images/theme/basic-16/";
       function changeValue(y, x) {
         var img = document.getElementById(y+"-"+x);
-        img.src = starter+prompt("What value to set?", "0");
+        img.src = starter+prompt("What value to set?", "0")+"png";
       }
     </script>
   </head>
