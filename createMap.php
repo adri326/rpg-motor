@@ -8,7 +8,7 @@
         for ($y = 0; $y < $_GET['height']; $y++) {
           echo '[';
           for ($x = 0; $x < $_GET['width']; $x++) {
-            echo '0';
+            echo '[0]';
             if ($x+1<$_GET['width']) {
               echo ',';
             }
@@ -26,7 +26,7 @@
         var img = document.getElementById(y+"-"+x);
         var nval = prompt("What value to set?", "0");
         img.src = starter+nval+".png";
-        map[y][x] = nval;
+        map[y][x][0] = nval;
       }
       function changeSize() {
         width = document.getElementById('width').value;
