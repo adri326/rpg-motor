@@ -68,16 +68,16 @@ function image(n) {
 function draw() {
   
   if (keys[38]) {
-    iy -= 0.25;
+    iy += 1;
   }
   if (keys[39]) {
-    ix += 0.25;
+    ix -= 1;
   }
   if (keys[37]) {
-    ix -= 0.25;
+    ix += 1;
   }
   if (keys[40]) {
-    iy += 0.25;
+    iy -= 1;
   }
   
   
@@ -99,7 +99,7 @@ function draw() {
       if (y>=0&&y<map.length) {
         if (x>=0&&x<map[y].length) {
           for (z = 0; z < map[y][x].length; z++) {
-            ctx.drawImage(image(map[y][x][z]), x*tileSize+xo-ix, y*tileSize+yo-iy);
+            ctx.drawImage(image(map[y][x][z]), x*tileSize+xo-ix, y*tileSize+yo-iy, tileSize, tileSize);
           }
         }
       }
