@@ -72,8 +72,8 @@ function draw() {
   
   var sx = Math.round(ix/tileSize-1.5);
   var sy = Math.round(iy/tileSize-1.5);
-  var ex = Math.round((ix+sizeX)/tileSize+à.5);
-  var ey = Math.round((ix+sizeX)/tileSize+à.5);
+  var ex = Math.round((ix+sizeX)/tileSize+0.5);
+  var ey = Math.round((ix+sizeX)/tileSize+0.5);
   var xo = ix%tileSize;
   var yo = iy%tileSize;
   for (var x = 0; x < map.length; x++) {
