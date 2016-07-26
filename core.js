@@ -24,7 +24,7 @@ var vis = (function(){
 var canvas, map, setup, xhr, players;
 var xhr = new XMLHttpRequest();
 var request = "firstSetup";
-var loop;
+var loop, keys = [];
 var ix = 0, iy = 0, tileSize = 16, width, height;
 var sx, sy, ex, ey, xo, yo;
 var x, y, z;
@@ -66,6 +66,23 @@ function image(n) {
 }
 
 function draw() {
+  
+  if (keys[38]) {
+    iy -= 1;
+  }
+  if (keys[39]) {
+    ix += 1;
+  }
+  if (keys[37]) {
+    ix -= 1;
+  }
+  if (keys[40]) {
+    iy += 1;
+  }
+  
+  
+  
+  
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   
   width = canvas.width;
@@ -110,3 +127,10 @@ xhr.open("GET", "parties/"+party+"/setup.json");
 xhr.send();
 
 
+document.body.addEventListener("keydown", function (e) {
+    keys[e.keyCode] = true;
+});
+
+document.body.addEventListener("keyup", function (e) {
+    keys[e.keyCode] = false;
+});
