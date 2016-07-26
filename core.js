@@ -1,3 +1,7 @@
+(function () {
+  var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+  window.requestAnimationFrame = requestAnimationFrame;
+  })();
 var canvas, map, setup, xhr, players;
 var xhr = new XMLHttpRequest();
 var request = "firstSetup";
@@ -45,13 +49,17 @@ function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(image(1), 0, 0);
   console.log('drawed');
+  requestAnimationFrame(draw);
 }
 
 function init() {
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext("2d");
   loop = setInterval(update, 5000);
-  canvas.onload = draw;
+  window.addEventListener("load", function () {
+    update();
+  });
+  draw();
 }
 
 xhr.onloadend = onHttpAnswer;
