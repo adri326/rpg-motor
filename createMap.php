@@ -10,6 +10,11 @@
         var img = document.getElementById(y+"-"+x);
         img.src = starter+prompt("What value to set?", "0")+".png";
       }
+      function changeSize() {
+        width = document.getElementById('width').value;
+        height = document.getElementById('height').value;
+        window.location = 'createMap.php?width='+width+'&height='+height;
+      }
     </script>
   </head>
   <body>
@@ -27,5 +32,12 @@
         }
       ?>
     </table>
+    <form>
+      <input type="text" id="width" />
+      <br />
+      <input type="text" id="height" />
+      <br />
+      <div onclick="newSize();">Change size</div>
+    </form>
   </body>
 </html>
