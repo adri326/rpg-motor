@@ -68,16 +68,16 @@ function image(n) {
 function draw() {
   
   if (keys[38]) {
-    iy -= 1;
+    iy -= 0.25;
   }
   if (keys[39]) {
-    ix += 1;
+    ix += 0.25;
   }
   if (keys[37]) {
-    ix -= 1;
+    ix -= 0.25;
   }
   if (keys[40]) {
-    iy += 1;
+    iy += 0.25;
   }
   
   
