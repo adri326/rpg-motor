@@ -40,7 +40,7 @@
         border-collapse: separate;
         border-spacing: 1px;
       }
-      td, tr {
+      td, tr, img {
         margin: 0px 0px;
         padding: 0px 0px;
       }
