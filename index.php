@@ -20,7 +20,7 @@ $player = sprintf('%04d', $_GET['player']);
   <body>
     <div class="container">
       <div id="canvasContainer">
-        <canvas id="canvas" width="10em" height="10em"/>
+        <canvas id="canvas" width="500px" height="500px"/>
       </div>
       <div id="playersContainer">
         
