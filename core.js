@@ -119,6 +119,13 @@ function init() {
     update();
   });
   draw();
+  document.body.addEventListener("keydown", function (e) {
+      keys[e.keyCode] = true;
+  });
+  
+  document.body.addEventListener("keyup", function (e) {
+      keys[e.keyCode] = false;
+  });
 }
 
 xhr.onloadend = onHttpAnswer;
@@ -127,10 +134,4 @@ xhr.open("GET", "parties/"+party+"/setup.json");
 xhr.send();
 
 
-document.body.addEventListener("keydown", function (e) {
-    keys[e.keyCode] = true;
-});
 
-document.body.addEventListener("keyup", function (e) {
-    keys[e.keyCode] = false;
-});
