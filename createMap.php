@@ -40,6 +40,10 @@
         border-collapse: separate;
         border-spacing: 1px;
       }
+      td, tr {
+        margin: 0px 0px;
+        padding: 0px 0px;
+      }
     </style>
   </head>
   <body>
