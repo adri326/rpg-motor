@@ -26,6 +26,7 @@ var xhr = new XMLHttpRequest();
 var request = "firstSetup";
 var loop;
 var ix = 0, iy = 0, tileSize = 16, width, height;
+var sx, sy, ex, ey, xo, yo;
 
 
 function onHttpAnswer() {
@@ -70,12 +71,12 @@ function draw() {
   width = canvas.width;
   height = canvas.height;
   
-  var sx = Math.round(ix/tileSize-1.5);
-  var sy = Math.round(iy/tileSize-1.5);
-  var ex = Math.round((ix+width)/tileSize+0.5);
-  var ey = Math.round((ix+height)/tileSize+0.5);
-  var xo = ix%tileSize;
-  var yo = iy%tileSize;
+  sx = Math.round(ix/tileSize-1.5);
+  sy = Math.round(iy/tileSize-1.5);
+  ex = Math.round((ix+width)/tileSize+0.5);
+  ey = Math.round((ix+height)/tileSize+0.5);
+  xo = ix%tileSize;
+  yo = iy%tileSize;
   for (var x = 0; x < map.length; x++) {
     for (var y = 0; y < map[x].length; y++) {
       for (var z = 0; z < map[y][x].length; z++) {
