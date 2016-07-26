@@ -3,7 +3,23 @@
   <head>
     <title>Map editor</title>
     <script>
-      var map = [[]];
+      var map =  <?php
+        echo '[';
+        for ($y = 0; $y < $_GET['height']; $y++) {
+          echo '[';
+          for ($x = 0; $x < $_GET['width']; $x++) {
+            echo '0';
+            if ($x+1<$_GET['width']) {
+              echo ',';
+            }
+          }
+          echo ']';
+          if ($y+1<$_GET['height']) {
+            echo ',';
+          }
+        }
+        echo ']';
+        ?>;
       var width, height;
       var starter = "ressources/images/theme/basic-16/";
       function changeValue(y, x) {
