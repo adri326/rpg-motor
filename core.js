@@ -79,8 +79,8 @@ function draw() {
   yo = iy%tileSize;
   for (y = sy; y < ey; y++) {
     for (x = sx; x < ex; x++) {
-      for (z = 0; z < map[y][x].length; z++) {
-        if (x>0&&x<map.length[y]&&y>0&&y<map.length) {
+      if (x>0&&x<map.length[y]&&y>0&&y<map.length) {
+        for (z = 0; z < map[y][x].length; z++) {
           ctx.drawImage(image(map[y][x][z]), x*sx+xo-ix, y*sy+yo-iy);
         }
       }
