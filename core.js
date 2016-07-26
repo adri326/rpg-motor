@@ -27,7 +27,7 @@ var request = "firstSetup";
 var loop;
 var ix = 0, iy = 0, tileSize = 16, width, height;
 var sx, sy, ex, ey, xo, yo;
-
+var x, y, z;
 
 function onHttpAnswer() {
   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -77,9 +77,9 @@ function draw() {
   ey = Math.round((ix+height)/tileSize+0.5);
   xo = ix%tileSize;
   yo = iy%tileSize;
-  for (var x = sx; x < ex; x++) {
-    for (var y = sy; y < ey; y++) {
-      for (var z = 0; z < map[y][x].length; z++) {
+  for (x = sx; x < ex; x++) {
+    for (y = sy; y < ey; y++) {
+      for (z = 0; z < map[y][x].length; z++) {
         ctx.drawImage(image(map[y][x][z]), x*sx+xo-ix, y*sy+yo-iy);
       }
     }
