@@ -77,8 +77,8 @@ function draw() {
   ey = Math.round((ix+height)/tileSize+0.5);
   xo = ix%tileSize;
   yo = iy%tileSize;
-  for (var x = 0; x < map.length; x++) {
-    for (var y = 0; y < map[x].length; y++) {
+  for (var x = sx; x < ex; x++) {
+    for (var y = sy; y < ey; y++) {
       for (var z = 0; z < map[y][x].length; z++) {
         ctx.drawImage(image(map[y][x][z]), x*sx+xo-ix, y*sy+yo-iy);
       }
