@@ -56,10 +56,12 @@
         margin-bottom: -2px;
       }
       .button {
-        border: 1px solid #000;
-        box-shadow: 0px 0px 6px -2px inset;
+        border: 1px solid #222;
         width: 16em;
         text-align: center;
+      }
+      .button:hover {
+        border: 1px solid #000;
       }
       .button, input, div {
         margin-bottom: 4px;
