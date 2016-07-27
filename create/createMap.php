@@ -21,7 +21,7 @@
         echo ']';
         ?>;
       var width, height;
-      var starter = "ressources/images/theme/basic-16/";
+      var starter = "../ressources/images/theme/basic-16/";
       function changeValue(y, x) {
         var img = document.getElementById(y+"-"+x);
         var nval = JSON.decode(prompt("What value to set?", "0"));
