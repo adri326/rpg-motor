@@ -56,7 +56,7 @@
         margin-bottom: -2px;
       }
       .button, input {
-        border: 1px solid #222;
+        border: 1px solid #aaa;
         width: 16em;
         text-align: center;
       }
