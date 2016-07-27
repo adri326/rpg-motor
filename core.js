@@ -21,6 +21,7 @@ var vis = (function(){
     }
   })();
 
+var oldmap = null; 
 var canvas, map, setup, xhr, players;
 var xhr = new XMLHttpRequest();
 var request = "firstSetup";
@@ -36,11 +37,17 @@ function onHttpAnswer() {
       setup = JSON.parse(response);
       if (request == "firstSetup") {
         request = "firstMap";
+        xhr.open("GET", "parties/"+party+"/map/"+setup.map+".json");
+        xhr.send();
       } else {
-        request = "map";
+        if (oldmap!=setup.map) {
+          request = "map";
+          xhr.open("GET", "parties/"+party+"/map/"+setup.map+".json");
+          xhr.send();
+          oldmap = setup.map;
+        }
       }
-      xhr.open("GET", "parties/"+party+"/map/"+setup.map+".json");
-      xhr.send();
+      
     }
     if (request == "map" || request == "firstMap") {
       map = JSON.parse(response);
@@ -66,20 +73,28 @@ function image(n) {
 }
 
 function draw() {
-  
-  if (keys[38]) {
-    iy += 1;
+  if (setup.tileSize==null) {
+    tileSize = 32;
   }
-  if (keys[39]) {
-    ix -= 1;
-  }
-  if (keys[37]) {
-    ix += 1;
-  }
-  if (keys[40]) {
-    iy -= 1;
+  else {
+    tileSize = setup.tileSize;
   }
   
+  
+  if (setup.useKeyboardMove!==false) {
+    if (keys[38]) {
+      iy += 1;
+    }
+    if (keys[39]) {
+      ix -= 1;
+    }
+    if (keys[37]) {
+      ix += 1;
+    }
+    if (keys[40]) {
+      iy -= 1;
+    }
+  }
   
   
   
@@ -115,9 +130,12 @@ function init() {
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext("2d");
   loop = setInterval(update, 5000);
-  ctx.webkitImageSmoothingEnabled = false;
-  ctx.mozImageSmoothingEnabled = false;
-  ctx.imageSmoothingEnabled = false
+  if (setup.imageBluring==false||setup.imageBluring==null) {
+    ctx.webkitImageSmoothingEnabled = false;
+    ctx.mozImageSmoothingEnabled = false;
+    ctx.imageSmoothingEnabled = false;
+    canvas.className += " noBlur";
+  }
   window.addEventListener("load", function () {
     update();
   });
