@@ -55,12 +55,12 @@
         margin: 0px 0px;
         margin-bottom: -2px;
       }
-      .button {
+      .button, input {
         border: 1px solid #222;
         width: 16em;
         text-align: center;
       }
-      .button:hover {
+      .button:hover, input:hover {
         border: 1px solid #000;
       }
       .button, input, div {
