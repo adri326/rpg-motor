@@ -24,10 +24,16 @@
       var starter = "ressources/images/theme/basic-16/";
       function changeValue(y, x) {
         var img = document.getElementById(y+"-"+x);
-        var nval = prompt("What value to set?", "0");
-        img.src = starter+nval+".png";
-        img.alt = nval;
-        map[y][x][0] = parseInt(nval, 10);
+        var nval = JSON.decode(prompt("What value to set?", "0"));
+        if (typeof nval == "array") {
+          img.src = starter+nval[0]+".png";
+          img.alt = nval[0];
+          map[y][x] = nval;
+        } else {
+          img.src = starter+nval+".png";
+          img.alt = nval;
+          map[y][x][0] = parseInt(nval, 10);
+        }
       }
       function changeSize() {
         width = document.getElementById('width').value;
@@ -62,9 +68,9 @@
       ?>
     </table>
     <form>
-      <input type="text" id="width" />
+      Width: <input type="text" id="width" />
       <br />
-      <input type="text" id="height" />
+      Height: <input type="text" id="height" />
       <br />
       <div onclick="changeSize();">Change size</div>
       <div onclick="alert(JSON.stringify(map));">Get result</div>
