@@ -21,7 +21,7 @@
         echo ']';
         ?>;
       var width, height;
-      var starter = "../ressources/images/theme/basic-16/";
+      var starter = "/rpg/ressources/images/theme/basic-16/";
       function changeValue(y, x) {
         var img = document.getElementById(y+"-"+x);
         var nval = JSON.decode(prompt("What value to set?", "0"));
@@ -58,6 +58,8 @@
       .button {
         border: 1px solid #000;
         box-shadow: 0px 0px 6px -2px inset;
+        width: 16em;
+        text-align: center;
       }
     </style>
   </head>
