@@ -21,7 +21,7 @@
         echo ']';
         ?>;
       var width, height;
-      var starter = "/rpg/ressources/images/theme/basic-16/";
+      var starter = "../ressources/images/theme/basic-16/";
       function changeValue(y, x) {
         var img = document.getElementById(y+"-"+x);
         var nval = JSON.decode(prompt("What value to set?", "0"));
@@ -71,7 +71,7 @@
           for ($x = 0; $x < $_GET['width']; $x++) {
             echo '<td><img id="';
             echo $y.'-'.$x;
-            echo '" src="ressources/images/theme/basic-16/0.png" alt="0"';
+            echo '" src="../ressources/images/theme/basic-16/0.png" alt="0"';
             echo 'onclick="changeValue('.$y.', '.$x.');" /></td>';
           }
           echo '</tr>';
