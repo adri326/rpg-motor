@@ -40,6 +40,11 @@
         height = document.getElementById('height').value;
         window.location = 'createMap.php?width='+width+'&height='+height;
       }
+      function saveMap() {
+        var mapId = document.getElementById('mapId').value;
+        var party = document.getElementById('party').value;
+        window.location = 'saveMap.php?party='+party+'&mapId='+mapId+'&map='+JSON.stringify(map);
+      }
     </script>
     <style>
       .editor {
@@ -49,6 +54,10 @@
       td, tr, img {
         margin: 0px 0px;
         margin-bottom: -2px;
+      }
+      .button {
+        border: 1px solid #000;
+        box-shadow: 0px 0px 6px -2px inset;
       }
     </style>
   </head>
@@ -72,8 +81,11 @@
       <br />
       Height: <input type="text" id="height" />
       <br />
-      <div onclick="changeSize();">Change size</div>
-      <div onclick="alert(JSON.stringify(map));">Get result</div>
+      <div class="button" onclick="changeSize();">Change size</div>
+      <div class="button" onclick="alert(JSON.stringify(map));">Get result</div>
+      Map id: <input type="text" id="mapId" /><br />
+      Party: <input type="text" id="party" />
+      <div class="button" onclick="saveMap();">Save it!</div>
     </form>
   </body>
 </html>
