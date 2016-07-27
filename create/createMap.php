@@ -61,6 +61,9 @@
         width: 16em;
         text-align: center;
       }
+      .button, input, div {
+        margin-bottom: 4px;
+      }
     </style>
   </head>
   <body>
