@@ -8,7 +8,7 @@ canvas#canvas {
   margin-right: auto;
   border: 1px solid #333;
 }
-canvas {
+canvas.noBlur {
   image-rendering: optimizeSpeed;             // Older versions of FF
   image-rendering: -moz-crisp-edges;          // FF 6.0+
   image-rendering: -webkit-optimize-contrast; // Webkit (non standard naming)
