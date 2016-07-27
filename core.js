@@ -115,6 +115,9 @@ function init() {
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext("2d");
   loop = setInterval(update, 5000);
+  ctx.webkitImageSmoothingEnabled = false;
+  ctx.mozImageSmoothingEnabled = false;
+  ctx.imageSmoothingEnabled = false
   window.addEventListener("load", function () {
     update();
   });
