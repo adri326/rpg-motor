@@ -5,7 +5,7 @@
         <tr>
           <td>
             <div id="menuButton">...</div>
-            <div id="menuList">
+            <div id="menuList" style="visibility: hidden;">
               <ul id="menu">
                 <a href="/"><li>Home</li></a>
               </ul>
