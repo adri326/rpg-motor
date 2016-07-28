@@ -69,6 +69,9 @@
         display: inline;
         margin-left: 2em;
       }
+      canvas {
+        border: 1px solid #d0d0d0;
+      }
       td, tr, img {
         margin: 0px 0px;
         margin-bottom: -2px;
