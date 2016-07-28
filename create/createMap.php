@@ -51,7 +51,7 @@ $player = sprintf('%04d', $_GET['player']);
       ?>
       </table>
       <span id="canvasContainer">
-        <canvas id="canvas"></canvas>
+        <canvas id="canvas" width="512px" height="512px"></canvas>
       </span>
     </div>
     <div id="setupContainer">
