@@ -36,26 +36,28 @@ $player = sprintf('%04d', $_GET['player']);
   </head>
   <body>
     <div id="mapContainer">
-      <table class="editor">
-      <?php
-        for ($y = 0; $y < $_GET['height']; $y++) {
-          echo '<tr>';
-          for ($x = 0; $x < $_GET['width']; $x++) {
-            echo '<td><img id="';
-            echo $y.'-'.$x;
-            echo '" src="../ressources/images/theme/basic-16/0.png" alt="0"';
-            echo 'onclick="selectSquare('.$y.', '.$x.');" /></td>';
+      <table><tbody><tr><td>
+        <table class="editor">
+        <?php
+          for ($y = 0; $y < $_GET['height']; $y++) {
+            echo '<tr>';
+            for ($x = 0; $x < $_GET['width']; $x++) {
+              echo '<td><img id="';
+              echo $y.'-'.$x;
+              echo '" src="../ressources/images/theme/basic-16/0.png" alt="0"';
+              echo 'onclick="selectSquare('.$y.', '.$x.');" /></td>';
+            }
+            echo '</tr>';
           }
-          echo '</tr>';
-        }
-      ?>
-      </table>
-      <span id="canvasContainer">
+        ?>
+        </table>
+      </td>
+      <td>
         <canvas id="canvas" width="512px" height="512px"></canvas>
-      </span>
+      </td></tr></tbody></table>
     </div>
     <div id="setupContainer">
-      <span id="generalSetup">
+      <table><tbody><tr><td>
         <form>
           Width: <input type="text" id="width" />
           <br />
@@ -67,13 +69,12 @@ $player = sprintf('%04d', $_GET['player']);
           Party: <input type="text" id="party" />
           <div class="button" onclick="saveMap();">Save it!</div>
         </form>
-      </span>
-      <span id="localSetup">
+      </td><td>
         <form>
           <textarea id="newValue" value=""></textarea>
           <div class="button" onclick="changeValue();">Save</div>
         </form>
-      </span>
+      </td></tr></tbody></table>
     </div>
   </body>
 </html>
