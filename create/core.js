@@ -13,7 +13,7 @@ function selectSquare(x, y) {
 }
 function changeValue() {
   map[ax][ay] = JSON.parse(document.getElementById('newValue').value);
-  var img = document.getElementById(y+"-"+x);
+  var img = document.getElementById(ay+"-"+ax);
   img.src = starter+map[ax][ay][0]+".png";
   img.alt = map[ax][ay][0];
 }
@@ -36,7 +36,7 @@ function changeValue() {
 function changeSize() {
   width = document.getElementById('width').value;
   height = document.getElementById('height').value;
-  window.location = 'createMap.php?width='+width+'&height='+height;
+  window.location = 'createMap.php?width='+width+'&height='+height+'&party='+party+'&player='+player;
 }
 function saveMap() {
   var mapId = document.getElementById('mapId').value;
