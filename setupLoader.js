@@ -34,6 +34,6 @@ function onHttpAnswer() {
 
 function update() {
   request = "setup";
-  xhr.open("GET", starter+"parties/"+party+"/setup.json");
+  xhr.open("GET", gstarter+"parties/"+party+"/setup.json");
   xhr.send();
 }
