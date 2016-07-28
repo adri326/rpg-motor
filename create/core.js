@@ -6,7 +6,7 @@ var tileSize = 32;
 var oldmap = null;
 loadMap = false;
 
-function selectSquare(x, y) {
+function selectSquare(y, x) {
   document.getElementById('newValue').value = JSON.stringify(map[y][x]);
   ax = x;
   ay = y;
