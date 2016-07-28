@@ -2,6 +2,7 @@ html {
   background: #101010;
   box-shadow: 0px 0px 2em #505050 inset;
   min-height: 100%;
+  color: #ddd;
 }
 canvas#canvas {
   margin-left: auto;
@@ -34,13 +35,14 @@ canvas.noBlur {
   margin: 0px 0px;
   margin-bottom: -2px;
 }
-.button, input {
+.button, input, textarea {
   border: 1px solid #aaa;
   width: 16em;
   text-align: center;
-  color: #ddd;
+  color: #000;
+  background: #ddd;
 }
-.button:hover, input:hover {
+.button:hover, input:hover, textarea:hover {
   border: 1px solid #ddd;
 }
 .button, input {
