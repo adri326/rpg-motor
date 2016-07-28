@@ -1,6 +1,6 @@
 html {
-  background: #e0e0e0;
-  box-shadow: 0px 0px 2em #c0c0c0 inset;
+  background: #101010;
+  box-shadow: 0px 0px 2em #505050 inset;
   min-height: 100%;
 }
 canvas#canvas {
@@ -9,10 +9,35 @@ canvas#canvas {
   border: 1px solid #333;
 }
 canvas.noBlur {
-  image-rendering: optimizeSpeed;             // Older versions of FF
-  image-rendering: -moz-crisp-edges;          // FF 6.0+
-  image-rendering: -webkit-optimize-contrast; // Webkit (non standard naming)
-  image-rendering: -o-crisp-edges;            // OS X & Windows Opera (12.02+)
-  image-rendering: crisp-edges;               // Possible future browsers.
-  -ms-interpolation-mode: nearest-neighbor;   // IE (non standard naming)
+  image-rendering: optimizeSpeed;             
+  image-rendering: -moz-crisp-edges;          
+  image-rendering: -webkit-optimize-contrast; 
+  image-rendering: -o-crisp-edges;            
+  image-rendering: crisp-edges;               
+  -ms-interpolation-mode: nearest-neighbor;   
+}
+.editor {
+  border-collapse: separate;
+  border-spacing: 1px;
+  display: inline-block;
+  margin-right: 4em;
+}
+.canvasContainer {
+  display: inline-block;
+  margin-left: 2em;
+}
+.canvasContainer td, .canvasContainer tr, .canvasContainer img {
+  margin: 0px 0px;
+  margin-bottom: -2px;
+}
+.button, input {
+  border: 1px solid #aaa;
+  width: 16em;
+  text-align: center;
+}
+.button:hover, input:hover {
+  border: 1px solid #000;
+}
+.button, input {
+  margin-bottom: 4px;
 }
