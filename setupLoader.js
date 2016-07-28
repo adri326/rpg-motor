@@ -1,5 +1,6 @@
 var xhr = new XMLHttpRequest();
 var request = "firstSetup";
+xhr.onloadend = onHttpAnswer;
 
 function onHttpAnswer() {
   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
