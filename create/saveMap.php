@@ -1,7 +1,7 @@
 <?php session_start();
 $party = sprintf('%04d', $_GET['party']);
 $player = sprintf('%04d', $_GET['player']);
-$mapId = $_GET['id']*1;
+$mapId = $_GET['mapId']*1;
 $map = $_GET['map'];
 $path = $__DIR__."../parties/".$party."/map/".$mapId.".json";
 $file = fopen($path, "w");
