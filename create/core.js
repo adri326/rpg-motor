@@ -7,7 +7,7 @@ var oldmap = null;
 loadMap = false;
 
 function selectSquare(y, x) {
-  document.getElementById('newValue').value = JSON.stringify(map[y][x]);
+  document.getElementById('newValue').value = JSON.stringify(map[x][y]);
   ax = x;
   ay = y;
 }
