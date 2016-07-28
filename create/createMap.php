@@ -22,6 +22,7 @@
         echo ']';
         ?>;
     </script>
+    <script src="../setupLoader.js"></script>
     <script src="../drawMap.js"></script>
     <script src="core.js"></script>
     <link rel="stylesheet" src="style.css">
