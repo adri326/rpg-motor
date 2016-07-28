@@ -29,7 +29,7 @@ var loop, keys = [];
 var ix = 0, iy = 0, tileSize = 16, width, height;
 var sx, sy, ex, ey, xo, yo;
 var x, y, z;
-var tiles = [];
+
 
 
 function onHttpAnswer() {
@@ -68,16 +68,7 @@ function update() {
   xhr.send();
 }
 
-function image(n) {
-  if (tiles[n]==null) {
-    var img = new Image();
-    img.src = setup.imageset+"/"+n+".png";
-    tiles[n] = img;
-    return img;
-  } else {
-    return tiles[n];
-  }
-}
+
 
 function draw() {
   if (setup.tileSize==null) {
