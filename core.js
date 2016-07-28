@@ -27,8 +27,7 @@ var xhr = new XMLHttpRequest();
 var request = "firstSetup";
 var loop, keys = [];
 var ix = 0, iy = 0, tileSize = 16, width, height;
-var sx, sy, ex, ey, xo, yo;
-var x, y, z;
+
 
 
 
