@@ -34,7 +34,11 @@ function onHttpAnswer() {
     console.log(xhr);
   }
 }
-
+function firstUpdate() {
+  request = "firstSetup";
+  xhr.open("GET", gstarter+"parties/"+party+"/setup.json");
+  xhr.send();
+}
 function update() {
   request = "setup";
   xhr.open("GET", gstarter+"parties/"+party+"/setup.json");
