@@ -9,8 +9,6 @@
   margin-left: 2em;
 }
 canvas {
-  width: 256px;
-  height: 256px;
   border: 1px solid #d0d0d0;
 }
 td, tr, img {
