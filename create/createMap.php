@@ -4,7 +4,7 @@
     <title>Map editor</title>
     <script>var map =  <?php
       echo '[';
-      for ($y = 0; $y < $_GET['heigth']; $y++) {
+      for ($y = 0; $y < $_GET['height']; $y++) {
         echo '[';
         for ($x = 0; $x < $_GET['width']; $x++) {
           echo '[0]';
@@ -13,7 +13,7 @@
           }
         }
         echo ']';
-        if ($y+1<$_GET['heigth']) {
+        if ($y+1<$_GET['height']) {
           echo ',';
         }
       }
