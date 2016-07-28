@@ -7,15 +7,15 @@ var oldmap = null;
 loadMap = false;
 
 function selectSquare(y, x) {
-  document.getElementById('newValue').value = JSON.stringify(map[x][y]);
+  document.getElementById('newValue').value = JSON.stringify(map[y][x]);
   ax = x;
   ay = y;
 }
 function changeValue() {
-  map[ax][ay] = JSON.parse(document.getElementById('newValue').value);
+  map[ay][ax] = JSON.parse(document.getElementById('newValue').value);
   var img = document.getElementById(ay+"-"+ax);
-  img.src = starter+map[ax][ay][0]+".png";
-  img.alt = map[ax][ay][0];
+  img.src = starter+map[ay][ax][0]+".png";
+  img.alt = map[ay][ax][0];
 }
 
 
