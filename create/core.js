@@ -3,6 +3,8 @@ var y, x, ay = 0, ax = 0;
 var ix = 0, iy = 0;
 var starter = "../ressources/images/theme/basic-16/";
 var tileSize = 32;
+var oldmap = null;
+loadMap = false;
 
 function select(x, y) {
   document.getElementById('newValue').innerText = JSON.stringify(map[y][x]);
