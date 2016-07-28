@@ -29,7 +29,7 @@ $player = sprintf('%04d', $_GET['player']);
       var player = "<?php echo $player; ?>";
       var gstarter = "../";
       window.addEventListener("load", function() {
-        request = "firstUpdate";
+        request = "firstSetup";
         update();
       });
     </script>
