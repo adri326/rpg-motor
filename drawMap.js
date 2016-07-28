@@ -1,4 +1,4 @@
-var tiles = [];
+var tiles = [], x, y;
 
 function image(n) {
   if (tiles[n]==null) {
