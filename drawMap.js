@@ -22,7 +22,7 @@ function drawMap() {
   width = canvas.width;
   height = canvas.height;
   
-  ctx.fillStyle("black");
+  ctx.fillStyle = "#000000";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   
   sx = Math.round(ix/tileSize-1.5);
