@@ -45,11 +45,22 @@
         var party = document.getElementById('party').value;
         window.location = 'saveMap.php?party='+party+'&mapId='+mapId+'&map='+JSON.stringify(map);
       }
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext("2d");
+      function draw() {
+        drawMap();
+      }
     </script>
     <style>
       .editor {
         border-collapse: separate;
         border-spacing: 1px;
+        display: inline;
+        margin-right: 4em;
+      }
+      div.canvasContainer {
+        display: inline;
+        margin-left: 2em;
       }
       td, tr, img {
         margin: 0px 0px;
@@ -69,7 +80,8 @@
     </style>
   </head>
   <body>
-    <table class="editor">
+    <div id="mapContainer">
+      <table class="editor">
       <?php
         for ($y = 0; $y < $_GET['height']; $y++) {
           echo '<tr>';
@@ -82,7 +94,10 @@
           echo '</tr>';
         }
       ?>
-    </table>
+      </table>
+      <div id="canvasContainer">
+        <canvas id="canvas"></canvas>
+      </div>
     <form>
       Width: <input type="text" id="width" />
       <br />
