@@ -1,20 +1,3 @@
-var map =  <?php
-  echo '[';
-  for ($y = 0; $y < $_GET['heigth']; $y++) {
-    echo '[';
-    for ($x = 0; $x < $_GET['width']; $x++) {
-      echo '[0]';
-      if ($x+1<$_GET['width']) {
-        echo ',';
-      }
-    }
-    echo ']';
-    if ($y+1<$_GET['heigth']) {
-      echo ',';
-    }
-  }
-  echo ']';
-  ?>;
 var width, heigth;
 var ix = 0, iy = 0;
 var starter = "../ressources/images/theme/basic-16/";
