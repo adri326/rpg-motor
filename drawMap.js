@@ -1,11 +1,14 @@
 var tiles = [];
 var sx, sy, ex, ey, xo, yo;
 var x, y, z;
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext("2d");
+
 
 function image(n) {
   if (tiles[n]==null) {
     var img = new Image();
-    img.src = setup.imageset+"/"+n+".png";
+    img.src = gstarter+setup.imageset+"/"+n+".png";
     tiles[n] = img;
     return img;
   } else {
