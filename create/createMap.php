@@ -46,9 +46,10 @@
         var party = document.getElementById('party').value;
         window.location = 'saveMap.php?party='+party+'&mapId='+mapId+'&map='+JSON.stringify(map);
       }
+      var canvas, ctx, tileSize = 32;
       function init() {
-        var canvas = document.getElementById('canvas');
-        var ctx = canvas.getContext("2d");
+        canvas = document.getElementById('canvas');
+        ctx = canvas.getContext("2d");
         draw();
       }
       function draw() {
