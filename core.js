@@ -72,6 +72,7 @@ function image(n) {
   if (tiles[n]==null) {
     var img = new Image();
     img.src = setup.imageset+"/"+n+".png";
+    tiles[n] = img;
     return img;
   } else {
     return tiles[n];
