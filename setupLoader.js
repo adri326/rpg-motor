@@ -12,6 +12,8 @@ function onHttpAnswer() {
         request = "firstMap";
         xhr.open("GET", "parties/"+party+"/map/"+setup.map+".json");
         xhr.send();
+      } else if (request == "firstSetup"&&!loadMap) {
+        init();
       } else {
         if (oldmap!=setup.map&&loadMap) {
           request = "map";
