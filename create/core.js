@@ -33,4 +33,5 @@ function init() {
 function draw() {
   drawMap();
 }
-window.addEventListener("load", init);
+update();
+request = "firstRequest";
