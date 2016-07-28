@@ -42,7 +42,7 @@ function saveMap() {
   var party = document.getElementById('party').value;
   window.location = 'saveMap.php?party='+party+'&mapId='+mapId+'&map='+JSON.stringify(map);
 }
-var canvas, ctx, tileSize = 32;
+var tileSize = 32;
 function init() {
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext("2d");
