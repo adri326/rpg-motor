@@ -6,13 +6,14 @@ var tileSize = 32;
 var oldmap = null;
 loadMap = false;
 
-function select(x, y) {
+function selectSquare(x, y) {
   document.getElementById('newValue').innerText = JSON.stringify(map[y][x]);
   ax = x;
   ay = y;
 }
 function changeValue() {
   map[ax][ay] = JSON.parse(document.getElementById('newValue').value);
+  var img = document.getElementById(y+"-"+x);
   img.src = starter+map[ax][ay][0]+".png";
   img.alt = map[ax][ay][0];
 }
