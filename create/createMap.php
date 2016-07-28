@@ -28,6 +28,10 @@ $player = sprintf('%04d', $_GET['player']);
       var party = "<?php echo $party; ?>";
       var player = "<?php echo $player; ?>";
       var gstarter = "../";
+      window.addEventListener("load", function() {
+        request = "firstUpdate";
+        update();
+      });
     </script>
     <script src="../setupLoader.js"></script>
     <script src="../drawMap.js"></script>
