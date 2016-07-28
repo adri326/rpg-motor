@@ -1,3 +1,7 @@
+<?php session_start();
+$party = sprintf('%04d', $_GET['party']);
+$player = sprintf('%04d', $_GET['player']);
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,6 +25,8 @@
         }
         echo ']';
         ?>;
+      var party = "<?php echo $party; ?>";
+      var player = "<?php echo $player; ?>";
     </script>
     <script src="../setupLoader.js"></script>
     <script src="../drawMap.js"></script>
