@@ -34,9 +34,10 @@ canvas.noBlur {
   border: 1px solid #aaa;
   width: 16em;
   text-align: center;
+  color: #ddd;
 }
 .button:hover, input:hover {
-  border: 1px solid #000;
+  border: 1px solid #ddd;
 }
 .button, input {
   margin-bottom: 4px;
