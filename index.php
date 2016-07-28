@@ -15,6 +15,7 @@ $player = sprintf('%04d', $_GET['player']);
       var party = <?php echo '"'.$party.'"'; ?>;
       var player = <?php echo '"'.$player.'"'; ?>;
     </script>
+    <script src="drawMap.js"></script>
     <script src="core.js"></script>
   </head>
   <body>
