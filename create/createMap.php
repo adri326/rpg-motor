@@ -2,23 +2,25 @@
 <html>
   <head>
     <title>Map editor</title>
-    <script>var map =  <?php
-      echo '[';
-      for ($y = 0; $y < $_GET['height']; $y++) {
+    <script>
+      var setup, xhr, players;
+      var map =  <?php
         echo '[';
-        for ($x = 0; $x < $_GET['width']; $x++) {
-          echo '[0]';
-          if ($x+1<$_GET['width']) {
+        for ($y = 0; $y < $_GET['height']; $y++) {
+          echo '[';
+          for ($x = 0; $x < $_GET['width']; $x++) {
+            echo '[0]';
+            if ($x+1<$_GET['width']) {
+              echo ',';
+            }
+          }
+          echo ']';
+          if ($y+1<$_GET['height']) {
             echo ',';
           }
         }
         echo ']';
-        if ($y+1<$_GET['height']) {
-          echo ',';
-        }
-      }
-      echo ']';
-      ?>;
+        ?>;
     </script>
     <script src="../drawMap.js"></script>
     <script src="core.js"></script>
