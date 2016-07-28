@@ -17,6 +17,7 @@ $player = sprintf('%04d', $_GET['player']);
     </script>
     <script src="drawMap.js"></script>
     <script src="core.js"></script>
+    <script src="setupLoader.js"></script>
   </head>
   <body>
     <div class="container">
