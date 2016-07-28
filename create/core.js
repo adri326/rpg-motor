@@ -52,5 +52,4 @@ function init() {
 function draw() {
   drawMap();
 }
-update();
-request = "firstRequest";
+firstUpdate();
