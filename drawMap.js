@@ -22,6 +22,9 @@ function drawMap() {
   width = canvas.width;
   height = canvas.height;
   
+  ctx.fillStyle("black");
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
   sx = Math.round(ix/tileSize-1.5);
   sy = Math.round(iy/tileSize-1.5);
   ex = Math.round((ix+width)/tileSize+0.5);
