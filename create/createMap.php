@@ -25,7 +25,7 @@
     <script src="../setupLoader.js"></script>
     <script src="../drawMap.js"></script>
     <script src="core.js"></script>
-    <link rel="stylesheet" src="style.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="mapContainer">
@@ -37,7 +37,7 @@
             echo '<td><img id="';
             echo $y.'-'.$x;
             echo '" src="../ressources/images/theme/basic-16/0.png" alt="0"';
-            echo 'onclick="changeValue('.$y.', '.$x.');" /></td>';
+            echo 'onclick="selectSquare('.$y.', '.$x.');" /></td>';
           }
           echo '</tr>';
         }
@@ -47,16 +47,26 @@
         <canvas id="canvas"></canvas>
       </span>
     </div>
-    <form>
-      Width: <input type="text" id="width" />
-      <br />
-      Height: <input type="text" id="height" />
-      <br />
-      <div class="button" onclick="changeSize();">Change size</div>
-      <div class="button" onclick="alert(JSON.stringify(map));">Get result</div>
-      Map id: <input type="text" id="mapId" /><br />
-      Party: <input type="text" id="party" />
-      <div class="button" onclick="saveMap();">Save it!</div>
-    </form>
+    <div id="setupContainer">
+      <span id="generalSetup">
+        <form>
+          Width: <input type="text" id="width" />
+          <br />
+          Height: <input type="text" id="height" />
+          <br />
+          <div class="button" onclick="changeSize();">Change size</div>
+          <div class="button" onclick="alert(JSON.stringify(map));">Get result</div>
+          Map id: <input type="text" id="mapId" /><br />
+          Party: <input type="text" id="party" />
+          <div class="button" onclick="saveMap();">Save it!</div>
+        </form>
+      </span>
+      <span id="localSetup">
+        <form>
+          <textarea id="newValue" value=""></textarea>
+          <div class="button" onclick="changeValue();">Save</div>
+        </form>
+      </span>
+    </div>
   </body>
 </html>
