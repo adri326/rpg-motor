@@ -24,7 +24,7 @@
       var starter = "../ressources/images/theme/basic-16/";
       function changeValue(y, x) {
         var img = document.getElementById(y+"-"+x);
-        var nval = JSON.decode(prompt("What value to set?", "0"));
+        var nval = JSON.parse(prompt("What value to set?", "0"));
         if (typeof nval == "array") {
           img.src = starter+nval[0]+".png";
           img.alt = nval[0];
