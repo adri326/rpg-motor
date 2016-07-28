@@ -16,16 +16,25 @@ html {
   padding: 0px;
 }
 #menuButton {
-  width: 16px;
-  height: 16px;
-  font-size: 6px;
+  width: 32px;
+  height: 30px;
+  font-size: 17px;
   text-align: center;
-  border-radius: 16px;
+  padding-top: 2px;
+  border-radius: 32px;
   background: #444;
   transition: background 0.2s;
+  margin: 8px;
+  color: #eee;
 }
 #menuButton:hover {
   background: #d22;
+}
+#title {
+  margin: 8px;
+}
+#menuList {
+  position: absolute;
 }
 canvas#canvas {
   margin-left: auto;
