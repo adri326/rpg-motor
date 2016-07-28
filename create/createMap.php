@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Map editor</title>
+    <script src="../drawMap.js"></script>
     <script>
       var map =  <?php
         echo '[';
@@ -45,11 +46,16 @@
         var party = document.getElementById('party').value;
         window.location = 'saveMap.php?party='+party+'&mapId='+mapId+'&map='+JSON.stringify(map);
       }
-      var canvas = document.getElementById('canvas');
-      var ctx = canvas.getContext("2d");
+      function init() {
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext("2d");
+        draw();
+      }
       function draw() {
         drawMap();
       }
+      window.addEventListener("load", init);
+      
     </script>
     <style>
       .editor {
@@ -58,7 +64,7 @@
         display: inline;
         margin-right: 4em;
       }
-      div.canvasContainer {
+      .canvasContainer {
         display: inline;
         margin-left: 2em;
       }
@@ -98,6 +104,7 @@
       <div id="canvasContainer">
         <canvas id="canvas"></canvas>
       </div>
+    </div>
     <form>
       Width: <input type="text" id="width" />
       <br />
