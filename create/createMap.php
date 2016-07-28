@@ -22,6 +22,7 @@
         echo ']';
         ?>;
       var width, height;
+      var ix = 0, iy = 0;
       var starter = "../ressources/images/theme/basic-16/";
       function changeValue(y, x) {
         var img = document.getElementById(y+"-"+x);
@@ -62,14 +63,16 @@
       .editor {
         border-collapse: separate;
         border-spacing: 1px;
-        display: inline;
+        display: inline-block;
         margin-right: 4em;
       }
       .canvasContainer {
-        display: inline;
+        display: inline-block;
         margin-left: 2em;
       }
       canvas {
+        width: 256px;
+        height: 256px;
         border: 1px solid #d0d0d0;
       }
       td, tr, img {
@@ -105,9 +108,9 @@
         }
       ?>
       </table>
-      <div id="canvasContainer">
+      <span id="canvasContainer">
         <canvas id="canvas"></canvas>
-      </div>
+      </span>
     </div>
     <form>
       Width: <input type="text" id="width" />
