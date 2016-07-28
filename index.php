@@ -22,6 +22,7 @@ $player = sprintf('%04d', $_GET['player']);
     
   </head>
   <body>
+    <?php include("starter.php"); ?>
     <div class="container">
       <div id="canvasContainer">
         <canvas id="canvas" width="500px" height="500px"/>
