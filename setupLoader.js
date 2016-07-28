@@ -1,5 +1,6 @@
 var xhr = new XMLHttpRequest();
 var request = "firstSetup";
+var loadMap = true;
 xhr.onloadend = onHttpAnswer;
 
 function onHttpAnswer() {
@@ -7,12 +8,12 @@ function onHttpAnswer() {
     var response = xhr.responseText;
     if (request == "setup" || request == "firstSetup") {
       setup = JSON.parse(response);
-      if (request == "firstSetup") {
+      if (request == "firstSetup"&&loadMap) {
         request = "firstMap";
         xhr.open("GET", "parties/"+party+"/map/"+setup.map+".json");
         xhr.send();
       } else {
-        if (oldmap!=setup.map) {
+        if (oldmap!=setup.map&&loadMap) {
           request = "map";
           xhr.open("GET", "parties/"+party+"/map/"+setup.map+".json");
           xhr.send();
