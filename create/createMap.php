@@ -36,7 +36,7 @@ $player = sprintf('%04d', $_GET['player']);
     <script src="../setupLoader.js"></script>
     <script src="../drawMap.js"></script>
     <script src="core.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../main.css">
   </head>
   <body>
     <div id="mapContainer">
