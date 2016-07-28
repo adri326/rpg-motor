@@ -5,38 +5,7 @@
     <script src="../drawMap.js"></script>
     <script src="core.js">
     </script>
-    <style>
-      .editor {
-        border-collapse: separate;
-        border-spacing: 1px;
-        display: inline-block;
-        margin-right: 4em;
-      }
-      .canvasContainer {
-        display: inline-block;
-        margin-left: 2em;
-      }
-      canvas {
-        width: 256px;
-        height: 256px;
-        border: 1px solid #d0d0d0;
-      }
-      td, tr, img {
-        margin: 0px 0px;
-        margin-bottom: -2px;
-      }
-      .button, input {
-        border: 1px solid #aaa;
-        width: 16em;
-        text-align: center;
-      }
-      .button:hover, input:hover {
-        border: 1px solid #000;
-      }
-      .button, input, div {
-        margin-bottom: 4px;
-      }
-    </style>
+    <link rel="stylesheet" src="style.css">
   </head>
   <body>
     <div id="mapContainer">
