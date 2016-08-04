@@ -1,23 +1,17 @@
 <header class="starter">
-  <div class="starter-container">
-    <table>
-      <tbody>
-        <tr>
-          <td>
-            <div id="menuButton">...</div>
-            <div id="menuList" style="visibility: hidden;">
-              <ul id="menu">
-                <a href="/"><li>Home</li></a>
-              </ul>
-            </div>
-          </td>
-          <td>
-            <div id="title">
-              RPG - motor
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  Party <?php echo $party; ?>
+</header>
+<header class="menu-list">
+  <ul>
+    <li>
+      <a href="/">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Force actualize
+      </a>
+    </li>
+  </ul>
 </header>
