@@ -14,9 +14,9 @@
       {"id": "1.3",
         "filename": "1.3.png"},
       {"id": "1.4",
-        "filename": "1.4.png"},
-    "filename": "1.png"
-    ]},
+        "filename": "1.4.png"}
+    ],
+    "filename": "1.png"},
   {"id": "2",
     "name": "dirt",
     "filename": "2.png"
