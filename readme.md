@@ -45,8 +45,10 @@ A party creator
 * *5.3.1-16 : leaves connecting*
 * 6 : flowers
 * 7 : river
+* 8 : sea
+* 9 : cliff
 
-**More need to be thought and done**
+**More need to be found by idea finders**
 
 For the basic-16 tileset and every other basic tilesets, a tile (square) is 50cm*50cm in real life proportions
 
