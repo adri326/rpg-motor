@@ -36,6 +36,7 @@ $player = sprintf('%04d', $_GET['player']);
     <script src="../setupLoader.js"></script>
     <script src="../drawMap.js"></script>
     <script src="core.js"></script>
+    <script src="../tilesReader.js"></script>
     <link rel="stylesheet" href="../main.css">
   </head>
   <body>
@@ -76,9 +77,12 @@ $player = sprintf('%04d', $_GET['player']);
       </td><td>
         <form>
           <textarea id="newValue" value=""></textarea>
-          <div class="button" onclick="changeValue();">Save</div>
+          <div class="button" onclick="changeValue(); draw();">Save</div>
         </form>
       </td></tr></tbody></table>
     </div>
+    <ul id="tilesPreview">
+      
+    </ul>
   </body>
 </html>
