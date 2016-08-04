@@ -13,7 +13,7 @@ function saveTileJSON(input) {
     }
   }
 }
-fonction getTileInfo(tilen) {
+function getTileInfo(tilen) {
   var result;
   for (var i = 0; i < tiles.length; i++) {
     if (tiles[i].id==Math.round(input-0.5)) {
