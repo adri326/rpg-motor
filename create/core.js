@@ -48,6 +48,9 @@ function init() {
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext("2d");
   draw();
+  request = "tiles";
+  ctx.open("../ressources/theme/basic-16/tiles.json");
+  ctx.send();
 }
 function draw() {
   drawMap();
