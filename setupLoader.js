@@ -2,6 +2,9 @@ var xhr = new XMLHttpRequest();
 var request = "firstSetup";
 var loadMap = true;
 xhr.onloadend = onHttpAnswer;
+var onTileRead = function() {
+  
+};
 
 function onHttpAnswer() {
   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -29,6 +32,10 @@ function onHttpAnswer() {
       if (request == "firstMap") {
         init();
       }
+    }
+    if (request == "tiles") {
+      saveTileJSON(response);
+      onTileRead();
     }
   } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status != 200) {
     console.log(xhr);
