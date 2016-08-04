@@ -1,0 +1,10 @@
+0: nothingness
+1: grass
+2: dirt
+3: path
+4: stone
+5: trees
+6: flower
+7: river
+8: sea
+9: cliff
