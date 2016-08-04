@@ -7,7 +7,7 @@ body {
   color: #ddd;
 }
 .container {
-  margin-top: 3em;
+  margin-top: 2em;
 }
 .starter {
   position: absolute;
@@ -82,3 +82,20 @@ canvas.noBlur, body {
 .button, input {
   margin-bottom: 4px;
 }
+.starter {
+  position: absolute;
+  left: 45%;
+  right: 45%;
+  top: 0px;
+  height: 1em;
+  text-align: center;
+  background: #000;
+  border: solid #fff;
+  border-width: 0px 1px 1px 1px;
+}
+.menu-list {
+  visibility: hidden;
+}
+
+
+
