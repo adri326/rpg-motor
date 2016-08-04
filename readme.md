@@ -32,17 +32,19 @@ A party creator
 
 *List of the tiles ids*
 
-* 0 : nothing
-* 1 : grass
-* 1.1-16: grass overlay
-* 2 : dirt
+(Italic are done)
+
+* *0 : nothing*
+* *1 : grass*
+* *1.1-4: grass overlay*
+* *2 : dirt*
 * 3 : path
-* 4 : stone (overlay)
+* *4 : stone (overlay)*
 * 5.0 : tree first log
 * 5.1 : tree log
 * 5.2 : tree log + leaves
 * 5.3 : leaves
-* *5.3.1-16 : leaves connecting*
+* 5.3.1-16 : leaves connecting
 * 6 : flowers
 * 7 : river
 * 8 : sea
