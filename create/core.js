@@ -49,8 +49,8 @@ function init() {
   ctx = canvas.getContext("2d");
   draw();
   request = "tiles";
-  ctx.open("../ressources/theme/basic-16/tiles.json");
-  ctx.send();
+  xhr.open("../ressources/theme/basic-16/tiles.json");
+  xhr.send();
   ontileRead = function() {
     for (var i = 0; i < tiles.length; i++) {
       var newElement = document.createElement('li');
@@ -66,4 +66,6 @@ function init() {
 function draw() {
   drawMap();
 }
-firstUpdate();
+window.addEventListener('load', function() {
+  firstUpdate();
+});
