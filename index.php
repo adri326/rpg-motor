@@ -19,7 +19,7 @@ $player = sprintf('%04d', $_GET['player']);
     <script src="drawMap.js"></script>
     <script src="setupLoader.js"></script>
     <script src="core.js"></script>
-    
+    <script src="tilesReader.js"></script>
   </head>
   <body>
     <?php include("starter.php"); ?>
