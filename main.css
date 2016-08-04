@@ -1,4 +1,5 @@
-html {
+body {
+  margin: 0px;
   background-image: url('ressources/bg0000.png');
   background-repeat: repeat;
   background-size: 64px 64px;
@@ -43,7 +44,7 @@ canvas#canvas {
   border: 1px solid #ddd;
   box-shadow: 0px 0px 2em #505050;
 }
-canvas.noBlur {
+canvas.noBlur, body {
   image-rendering: optimizeSpeed;             
   image-rendering: -moz-crisp-edges;          
   image-rendering: -webkit-optimize-contrast; 
