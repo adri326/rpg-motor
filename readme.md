@@ -28,7 +28,11 @@ But, as I said, it is in WIP.
 A good part of the basic-16 tileset
 
 A better map editor with building tools, settings reader and editor
+
 A party creator
+
+The texture path should be moved from /ressources/images/theme/{theme}/... to /ressources/theme/{theme}/[images]/ when adding texturepack handling
+
 
 *List of the tiles ids*
 
