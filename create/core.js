@@ -49,7 +49,7 @@ function init() {
   ctx = canvas.getContext("2d");
   draw();
   request = "tiles";
-  xhr.open("../ressources/theme/basic-16/tiles.json");
+  xhr.open("get", "../ressources/theme/basic-16/tiles.json");
   xhr.send();
   ontileRead = function() {
     for (var i = 0; i < tiles.length; i++) {
