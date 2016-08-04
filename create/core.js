@@ -51,6 +51,17 @@ function init() {
   request = "tiles";
   ctx.open("../ressources/theme/basic-16/tiles.json");
   ctx.send();
+  ontileRead = function() {
+    for (var i = 0; i < tiles.length; i++) {
+      var newElement = document.createElement('li');
+      var newImg = document.createElement('img');
+      newImg.src = "../ressources/theme/basic-16/"+tiles[i].filename;
+      newImg.width = '32px';
+      newImg.height = '32px';
+      newElement.appendChild(newImg);
+      document.getElementById('tileslist').appendChild(newElement);
+    }
+  }
 }
 function draw() {
   drawMap();
