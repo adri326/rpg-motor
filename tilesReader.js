@@ -2,6 +2,16 @@ var tiles;
 var tilesSaved = false;
 function saveTileJSON(input) {
   tiles = JSON.parse(input);
+  for (var i = 0; i < tiles.length; i++) {
+    if (tiles[i].subs!=null) {
+      for (var j = 0; j < tiles[i].length; j++) {
+        tiles[i].subs[j].sup = tiles[i];
+        if (tiles[i].subs[j].name == null) {
+          tiles[i].subs[j].name = tiles[i].name;
+        }
+      }
+    }
+  }
 }
 fonction getTileInfo(tilen) {
   var result;
