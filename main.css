@@ -42,7 +42,7 @@ canvas#canvas {
   margin-left: auto;
   margin-right: auto;
   border: 1px solid #ddd;
-  box-shadow: 0px 0px 2em #505050;
+  box-shadow: 0px 0px 2em #000000;
 }
 canvas.noBlur, body {
   image-rendering: optimizeSpeed;             
@@ -83,15 +83,18 @@ canvas.noBlur, body {
   margin-bottom: 4px;
 }
 .starter {
+  font-size: 150%;
   position: absolute;
   left: 45%;
   right: 45%;
   top: 0px;
-  height: 1em;
+  padding: 0.2em;
+  height: 1.5em;
   text-align: center;
   background: #000;
-  border: solid #fff;
+  border: solid #ddd;
   border-width: 0px 1px 1px 1px;
+  box-shadow: 0px 0px 2em #000000;
 }
 .menu-list {
   visibility: hidden;
