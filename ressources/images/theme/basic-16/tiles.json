@@ -1,20 +1,28 @@
 [
   {"id": "0",
     "opacity": 0.5,
-    "name": "void"
+    "name": "void",
+    "filename": "0.png"
   },
   {"id": "1",
     "name": "grass",
     "subs": [
-      {"id": "1.1"},
-      {"id": "1.2"},
-      {"id": "1.3"},
-      {"id": "1.4"}
+      {"id": "1.1",
+        "filename": "1.1.png"},
+      {"id": "1.2",
+        "filename": "1.2.png"},
+      {"id": "1.3",
+        "filename": "1.3.png"},
+      {"id": "1.4",
+        "filename": "1.4.png"},
+    "filename": "1.png"
     ]},
   {"id": "2",
-    "name": "dirt"
+    "name": "dirt",
+    "filename": "2.png"
   },
   {"id": "4",
-    "name": "stone"
+    "name": "stone",
+    "filename": "4.png"
   }
 ]
