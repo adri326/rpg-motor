@@ -1,4 +1,4 @@
-var tiles = [];
+var images = [];
 var sx, sy, ex, ey, xo, yo;
 var x, y, z;
 var canvas;
@@ -6,13 +6,13 @@ var ctx;
 
 
 function image(n) {
-  if (tiles[n]==null) {
+  if (images[n]==null) {
     var img = new Image();
     img.src = gstarter+setup.imageset+"/"+n+".png";
-    tiles[n] = img;
+    images[n] = img;
     return img;
   } else {
-    return tiles[n];
+    return images[n];
   }
 }
 
