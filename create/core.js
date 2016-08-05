@@ -1,10 +1,12 @@
-var width, heigth;
+var w, h, ow, oh; //level w & h in tiles and the old values of w & h
 var y, x, ay = 0, ax = 0;
 var ix = 0, iy = 0;
 var starter = "../ressources/images/theme/basic-16/";
 var tileSize = 32;
 var oldmap = null;
 loadMap = false;
+
+var onSizeChanged = function() {};
 
 function selectSquare(y, x) {
   document.getElementById('newValue').value = JSON.stringify(map[y][x]);
@@ -17,27 +19,42 @@ function changeValue() {
   img.src = starter+map[ay][ax][0]+".png";
   img.alt = map[ay][ax][0];
 }
-
-
-
-/*function changeValue(y, x) {
-  var img = document.getElementById(y+"-"+x);
-  var nval = JSON.parse(prompt("What value to set?", "0"));
-  if (typeof nval == "array") {
-    img.src = starter+nval[0]+".png";
-    img.alt = nval[0];
-    map[y][x] = nval;
-  } else {
-    img.src = starter+nval+".png";
-    img.alt = nval;
-    map[y][x][0] = parseInt(nval, 10);
-  }
-}*/
 function changeSize() {
-  width = document.getElementById('width').value;
-  height = document.getElementById('height').value;
-  window.location = 'createMap.php?width='+width+'&height='+height+'&party='+party+'&player='+player;
+  w = document.getElementById('width').value;
+  h = document.getElementById('height').value;
+  
+  if (h<oh) {
+    map = map.slice(0, h);
+  } else {
+    for (var i = oh; i < h; i++) {
+      map[i] = [];
+      for (var j = 0; j < w; j++) {
+        map[i][j] = [0];
+      }
+    }
+  }
+  
+  for (var i = 0; i < h; i++) {
+    if (w<ow) {
+      map[i] = map[i].slice(0, w);
+    } else {
+      if (typeof map[i] == "undefined") {
+        map[i] = [];
+        for (var j = 0; j < w; j++) {
+          map[i][j] = [0];
+        }
+      } else {
+        for (var j = ow; j < w; j++) {
+          map[i][j] = [0];
+        }
+      }
+    }
+  }
+  
+  ow = w;
+  oh = h;
 }
+
 function saveMap() {
   var mapId = document.getElementById('mapId').value;
   var party = document.getElementById('party').value;
