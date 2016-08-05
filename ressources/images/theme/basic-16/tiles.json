@@ -1,28 +1,52 @@
 [
-  {"id": "0",
+  {
+  	"id": "0",
     "opacity": 0.5,
     "name": "void",
     "filename": "0.png"
   },
-  {"id": "1",
+  {
+  	"id": "1",
     "name": "grass",
     "subs": [
-      {"id": "1.1",
-        "filename": "1.1.png"},
-      {"id": "1.2",
-        "filename": "1.2.png"},
-      {"id": "1.3",
-        "filename": "1.3.png"},
-      {"id": "1.4",
-        "filename": "1.4.png"}
+      {
+      	"id": "1.1",
+        "filename": "1.1.png"
+      },
+      {
+      	"id": "1.2",
+        "filename": "1.2.png"
+      },
+      {
+      	"id": "1.3",
+        "filename": "1.3.png"
+      },
+      {
+      	"id": "1.4",
+        "filename": "1.4.png"
+      }
     ],
-    "filename": "1.png"},
-  {"id": "2",
+    "filename": "1.png"
+  },
+  {
+  	"id": "2",
     "name": "dirt",
     "filename": "2.png"
   },
-  {"id": "4",
+  {
+  	"id": "4",
     "name": "stone",
     "filename": "4.png"
+  },
+  {
+  	"id": "5",
+  	"name": "wood log",
+  	"filename": "5.png",
+  	"subs": [
+  		{
+  			"id": "5.2",
+  			"filename": "5.2.png"
+  		}
+  	]
   }
 ]
