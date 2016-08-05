@@ -41,25 +41,38 @@ $player = sprintf('%04d', $_GET['player']);
   </head>
   <body>
     <div id="mapContainer">
-      <table><tbody><tr><td>
-        <table class="editor">
-        <?php
-          for ($y = 0; $y < $_GET['height']; $y++) {
-            echo '<tr>';
-            for ($x = 0; $x < $_GET['width']; $x++) {
-              echo '<td><img id="';
-              echo $y.'-'.$x;
-              echo '" src="../ressources/images/theme/basic-16/0.png" alt="0"';
-              echo 'onclick="selectSquare('.$y.', '.$x.');" /></td>';
+      <table><tbody><tr>
+        <td rowspan="2">
+          <canvas id="canvas" width="512px" height="512px" class="noblur"></canvas>
+        </td>
+        <td>
+          <table class="editor">
+          <?php
+            for ($y = 0; $y < 4; $y++) {
+              echo '<tr>';
+              for ($x = 0; $x < 4; $x++) {
+                echo '<td id="';
+                echo $y.'-'.$x.'-td';
+                echo '"><img id="';
+                echo $y.'-'.$x;
+                echo '" src="../ressources/images/theme/basic-16/0.png" alt="0"';
+                echo 'onclick="selectSquare('.$y.', '.$x.');" /></td>';
+              }
+              echo '</tr>';
             }
-            echo '</tr>';
-          }
-        ?>
-        </table>
-      </td>
-      <td>
-        <canvas id="canvas" width="512px" height="512px"></canvas>
-      </td></tr></tbody></table>
+          ?>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <form>
+            <textarea id="newValue" value=""></textarea>
+            <div class="button" onclick="changeValue(); draw();">Save</div>
+          </form>
+        </td>
+      </tr>
+      </tr></tbody></table>
     </div>
     <div id="setupContainer">
       <table><tbody><tr><td>
@@ -73,11 +86,6 @@ $player = sprintf('%04d', $_GET['player']);
           Map id: <input type="text" id="mapId" /><br />
           Party: <input type="text" id="party" />
           <div class="button" onclick="saveMap();">Save it!</div>
-        </form>
-      </td><td>
-        <form>
-          <textarea id="newValue" value=""></textarea>
-          <div class="button" onclick="changeValue(); draw();">Save</div>
         </form>
       </td></tr></tbody></table>
     </div>
