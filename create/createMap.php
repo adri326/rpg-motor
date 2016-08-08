@@ -37,11 +37,16 @@ $player = sprintf('%04d', $_GET['player']);
     <script src="../drawMap.js"></script>
     <script src="core.js"></script>
     <script src="../tilesReader.js"></script>
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="create.css" />
   </head>
   <body>
     <div id="mapContainer">
-      <table><tbody><tr><td>
+      <table><tbody><tr>
+      <td rowspan="2">
+        <canvas id="canvas" width="512px" height="512px"></canvas>
+      </td>
+      <td>
         <table class="editor">
         <?php
           for ($y = 0; $y < $_GET['height']; $y++) {
@@ -56,10 +61,13 @@ $player = sprintf('%04d', $_GET['player']);
           }
         ?>
         </table>
-      </td>
-      <td>
-        <canvas id="canvas" width="512px" height="512px"></canvas>
-      </td></tr></tbody></table>
+      </td></tr><tr><td>
+        <form>
+          <textarea id="newValue" value=""></textarea>
+          <div class="button" onclick="changeValue(); draw();">Save</div>
+        </form>
+      </td></tr>
+      </tr></tbody></table>
     </div>
     <div id="setupContainer">
       <table><tbody><tr><td>
@@ -73,11 +81,6 @@ $player = sprintf('%04d', $_GET['player']);
           Map id: <input type="text" id="mapId" /><br />
           Party: <input type="text" id="party" />
           <div class="button" onclick="saveMap();">Save it!</div>
-        </form>
-      </td><td>
-        <form>
-          <textarea id="newValue" value=""></textarea>
-          <div class="button" onclick="changeValue(); draw();">Save</div>
         </form>
       </td></tr></tbody></table>
     </div>
