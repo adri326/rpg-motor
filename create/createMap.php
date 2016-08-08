@@ -42,7 +42,7 @@ $player = sprintf('%04d', $_GET['player']);
   </head>
   <body>
     <div id="mapContainer">
-      <table><tbody><tr>
+      <table><tbody><tr class="canvas-container-top">
       <td rowspan="2">
         <canvas id="canvas" width="512px" height="512px"></canvas>
       </td>
@@ -61,7 +61,7 @@ $player = sprintf('%04d', $_GET['player']);
           }
         ?>
         </table>
-      </td></tr><tr><td>
+      </td></tr><tr class="canvas-container-bottom"><td>
         <form>
           <textarea id="newValue" value=""></textarea>
           <div class="button" onclick="changeValue(); draw();">Save</div>
