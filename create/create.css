@@ -1,0 +1,12 @@
+#tilesPreview {
+  position: absolute;
+  top: 2em;
+  margin: 0px;
+  right: 0px;
+  width: 5em;
+  height: auto;
+  align-content: center;
+}
+.canvas-container-top, .canvas-container-bottom {
+  vertical-align: top;
+}
