@@ -44,6 +44,10 @@
   	"filename": "5.png",
   	"subs": [
   		{
+  			"id": "5.1",
+  			"filename": "5.1.png"
+  		},
+  		{
   			"id": "5.2",
   			"filename": "5.2.png"
   		}
