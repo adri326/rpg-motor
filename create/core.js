@@ -22,14 +22,26 @@ function changeValue() {
 function changeSize() {
   w = document.getElementById('width').value;
   h = document.getElementById('height').value;
-  
+  var editor = document.getElementById("editor");
   if (h<oh) {
     map = map.slice(0, h);
+    for (var i = h; i < oh-1; i++) {
+      editor.removeChild(editor.lastChild());
+    }
   } else {
     for (var i = oh; i < h; i++) {
       map[i] = [];
+      var yelem = document.createElement("tr");
+      yelem.id = "y-"+i;
       for (var j = 0; j < w; j++) {
         map[i][j] = [0];
+        var xelem = document.createElement("td");
+        var img = document.createElement("img");
+        img.src = "../"+setup.imageset+"/0.png";
+        img.onclick = "selectSquare("+y+", "+x+");";
+        img.ondblclick = "selectAll();";
+        xelem.appendChild(img);
+        yelem.appendChild(xelem);
       }
     }
   }
