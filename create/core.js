@@ -76,7 +76,7 @@ function init() {
       newImg.width = '32px';
       newImg.height = '32px';
       newElement.appendChild(newImg);
-      document.getElementById('tileslist').appendChild(newElement);
+      document.getElementById('tilesList').appendChild(newElement);
     }
   }
 }
