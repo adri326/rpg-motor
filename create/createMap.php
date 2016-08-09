@@ -84,7 +84,7 @@ $player = sprintf('%04d', $_GET['player']);
         </form>
       </td></tr></tbody></table>
     </div>
-    <ul id="tilesPreview">
+    <ul id="tilesList">
       
     </ul>
   </body>
