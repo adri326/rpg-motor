@@ -47,7 +47,7 @@ $player = sprintf('%04d', $_GET['player']);
         <canvas id="canvas" width="512px" height="512px"></canvas>
       </td>
       <td>
-        <table class="editor">
+        <table class="editor" id="editor">
         <?php
           for ($y = 0; $y < $_GET['height']; $y++) {
             echo '<tr id="y-'.$y.'">';
