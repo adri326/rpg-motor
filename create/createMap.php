@@ -55,7 +55,8 @@ $player = sprintf('%04d', $_GET['player']);
               echo '<td><img id="';
               echo $y.'-'.$x;
               echo '" src="../ressources/images/theme/basic-16/0.png" alt="0"';
-              echo 'onclick="selectSquare('.$y.', '.$x.');" /></td>';
+              echo 'onclick="selectSquare('.$y.', '.$x.');"';
+              echo 'ondblclick="selectAll()" /></td>';
             }
             echo '</tr>';
           }
