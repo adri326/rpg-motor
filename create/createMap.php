@@ -50,9 +50,9 @@ $player = sprintf('%04d', $_GET['player']);
         <table class="editor">
         <?php
           for ($y = 0; $y < $_GET['height']; $y++) {
-            echo '<tr>';
+            echo '<tr id="y-'.$y.'">';
             for ($x = 0; $x < $_GET['width']; $x++) {
-              echo '<td><img id="';
+              echo '<td id="x-'.$x.'"><img id="';
               echo $y.'-'.$x;
               echo '" src="../ressources/images/theme/basic-16/0.png" alt="0"';
               echo 'onclick="selectSquare('.$y.', '.$x.');"';
