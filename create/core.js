@@ -36,6 +36,9 @@ function changeValue() {
     }
   }
 }
+function removeLastChild(elem) {
+  elem.removeChild(elem.childNodes[elem.childNodes.length-1]);
+}
 function changeSize() { //the size changing function (handle the map and the selector)
   w = document.getElementById('width').value;
   h = document.getElementById('height').value;
@@ -43,7 +46,7 @@ function changeSize() { //the size changing function (handle the map and the sel
   if (h<oh) { //first the height modification
     map = map.slice(0, h);
     for (var i = h; i < oh-1; i++) {
-      editor.removeChild(editor.lastChild());
+      removeLastChild(editor.childNodes[0]);
     }
   } else {
     for (var i = oh; i < h; i++) {
@@ -62,6 +65,7 @@ function changeSize() { //the size changing function (handle the map and the sel
         xelem.appendChild(img);
         yelem.appendChild(xelem);
       }
+      editor.childNodes[0].appendChild(yelem);
     }
   }
   
@@ -70,7 +74,7 @@ function changeSize() { //the size changing function (handle the map and the sel
     if (w<ow) {
       map[i] = map[i].slice(0, w);
       for (var j = w; j < ow-1; j++) {
-        yelem.removeChild(yelem.lastChild());
+        removeLastChild(yelem);
       }
     } else {
       if (typeof map[i] == "undefined") {
