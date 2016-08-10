@@ -70,7 +70,7 @@ function changeSize() { //the size changing function (handle the map and the sel
     if (w<ow) {
       map[i] = map[i].slice(0, w);
       for (var j = w; j < ow-1; j++) {
-        yelem.removeChild(yelem.lastChild()));
+        yelem.removeChild(yelem.lastChild());
       }
     } else {
       if (typeof map[i] == "undefined") {
