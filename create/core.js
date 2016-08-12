@@ -77,6 +77,7 @@ function changeSize() { //the size changing function (handle the map and the sel
   } else if (trs.length<h) {
     for (var i = trs.length; i < h; i++) {
       trs[i] = document.createElement("tr");
+      tds[i] = [];
       for (var j = 0; j < w; j++) {
         tds[i][j] = document.createElement("td");
         tds[i][j].id = "td-"+i+"-"+j;
