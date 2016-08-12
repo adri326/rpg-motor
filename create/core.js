@@ -43,10 +43,11 @@ function removeLastChild(elem) {
   elem.removeChild(elem.childNodes[elem.childNodes.length-1]);
 }
 function actualiseTable() {
+  var tbody = editor.childNodes[1];
   trs = [];
   tds = [];
-  for (var i = 0; i < editor.childNodes[0].childNodes.length; i++) {
-    trs[i] = editor.childNodes[0].childNodes[i];
+  for (var i = 0; i < tbody.childNodes.length; i++) {
+    trs[i] = tbody.childNodes[i];
     tds[i] = [];
     for (var j = 0; j < trs[i].childNodes.length; j++) {
       tds[i][j] = trs[i].childNodes[j];
@@ -56,7 +57,7 @@ function actualiseTable() {
 
 function changeSize() { //the size changing function (handle the map and the selector)
   actualiseTable();
-  var tbody = editor.childNodes[0];
+  var tbody = editor.childNodes[1]; //in a fishy way, tbody is the second child
   w = document.getElementById('width').value;
   h = document.getElementById('height').value;
   
@@ -71,7 +72,7 @@ function changeSize() { //the size changing function (handle the map and the sel
   
   if (trs.length>h) {
     for (var i = h; i < trs.length; i++) {
-      editor.childNodes[0].removeChild(trs[i]);
+      tbody.removeChild(trs[i]);
       trs[i] = null;
     }
   } else if (trs.length<h) {
