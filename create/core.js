@@ -6,6 +6,9 @@ var tileSize = 32;
 var oldmap = null;
 loadMap = false;
 var tileSize = 32;
+var trs = [];
+var tds = [];
+var editor;
 
 var onSizeChanged = function() {};
 
@@ -39,33 +42,53 @@ function changeValue() {
 function removeLastChild(elem) {
   elem.removeChild(elem.childNodes[elem.childNodes.length-1]);
 }
+function actualiseTable() {
+  trs = [];
+  tds = [];
+  for (var i = 0; i < editor.childNodes[0].childNodes.length; i++) {
+    trs[i] = editor.childNodes[0].childNodes[i];
+    tds[i] = [];
+    for (var j = 0; j < trs[i].childNodes.length; j++) {
+      tds[i][j] = trs[i].childNodes[j];
+    }
+  }
+}
+
 function changeSize() { //the size changing function (handle the map and the selector)
+  actualiseTable();
+  var tbody = editor.childNodes[0];
   w = document.getElementById('width').value;
   h = document.getElementById('height').value;
-  var editor = document.getElementById("editor");
+  
   if (h<oh) { //first the height modification
     map = map.slice(0, h);
-    for (var i = h; i < oh-1; i++) {
-      removeLastChild(editor.childNodes[0]);
-    }
-  } else {
+    
+  } else if (h>oh) {
     for (var i = oh; i < h; i++) {
       map[i] = [];
-      var yelem = document.createElement("tr");
-      yelem.id = "y-"+i;
+    }
+  }
+  
+  if (trs.length>h) {
+    for (var i = h; i < trs.length; i++) {
+      editor.childNodes[0].removeChild(trs[i]);
+      trs[i] = null;
+    }
+  } else if (trs.length<h) {
+    for (var i = trs.length; i < h; i++) {
+      trs[i] = document.createElement("tr");
       for (var j = 0; j < w; j++) {
-        map[i][j] = [0];
-        var xelem = document.createElement("td");
-        xelem.id = "td-"+i+"-"+j;
+        tds[i][j] = document.createElement("td");
+        tds[i][j].id = "td-"+i+"-"+j;
         var img = document.createElement("img");
         img.src = "../"+setup.imageset+"/0.png";
-        img.id = y+"-"+y;
+        img.id = i+"-"+j;
         img.onclick = "selectSquare("+y+", "+x+");";
         img.ondblclick = "selectAll("+y+", "+x+");";
-        xelem.appendChild(img);
-        yelem.appendChild(xelem);
+        tds[i][j].appendChild(img);
+        trs[i].appendChild(tds[i][j]);
       }
-      editor.childNodes[0].appendChild(yelem);
+      editor.appendChild(trs[i]);
     }
   }
   
@@ -73,9 +96,6 @@ function changeSize() { //the size changing function (handle the map and the sel
     var yelem = document.getElementById("y-"+i);
     if (w<ow) {
       map[i] = map[i].slice(0, w);
-      for (var j = w; j < ow-1; j++) {
-        removeLastChild(yelem);
-      }
     } else {
       if (typeof map[i] == "undefined") {
         map[i] = [];
@@ -87,16 +107,24 @@ function changeSize() { //the size changing function (handle the map and the sel
           map[i][j] = [0];
         }
       }
-      for (var j = ow; j < w; j++) {
-        var xelem = document.createElement("td");
-        xelem.id = "td-"+i+"-"+j;
+    }
+    
+    if (tds[i].length>w) {
+      for (var j = w; i < tds.length; i++) {
+        trs[i].removeChild(tds[i][j]);
+        tds[i][j] = null;
+      }
+    } else if (tds[i].length<w) {
+      for (var j = tds[i].length; j < w; j++) {
+        tds[i][j] = document.createElement("td");
+        tds[i][j].id = "td-"+i+"-"+j;
         var img = document.createElement("img");
         img.src = "../"+setup.imageset+"/0.png";
+        img.id = i+"-"+j;
         img.onclick = "selectSquare("+y+", "+x+");";
         img.ondblclick = "selectAll("+y+", "+x+");";
-        img.id = y+"-"+y;
-        xelem.appendChild(img);
-        yelem.appendChild(xelem);
+        tds[i][j].appendChild(img);
+        trs[i].appendChild(tds[i][j]);
       }
     }
   }
@@ -128,10 +156,12 @@ function init() {
       document.getElementById('tilesList').appendChild(newElement);
     }
   }
+  actualiseTable();
 }
 function draw() {
   drawMap();
 }
 window.addEventListener('load', function() {
+  editor = document.getElementById("editor");
   firstUpdate();
 });
