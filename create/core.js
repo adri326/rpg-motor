@@ -47,10 +47,14 @@ function actualiseTable() {
   trs = [];
   tds = [];
   for (var i = 0; i < tbody.childNodes.length; i++) {
-    trs[i] = tbody.childNodes[i];
-    tds[i] = [];
-    for (var j = 0; j < trs[i].childNodes.length; j++) {
-      tds[i][j] = trs[i].childNodes[j];
+    if (tbody.childNodes[i].data == null) {
+      trs[i] = tbody.childNodes[i];
+      tds[i] = [];
+      for (var j = 0; j < trs[i].childNodes.length; j++) {
+        if (trs[i].childNodes[j].data == null) {
+          tds[i][j] = trs[i].childNodes[j];
+        }
+      }
     }
   }
 }
@@ -90,7 +94,7 @@ function changeSize() { //the size changing function (handle the map and the sel
         tds[i][j].appendChild(img);
         trs[i].appendChild(tds[i][j]);
       }
-      editor.appendChild(trs[i]);
+      tbody.appendChild(trs[i]);
     }
   }
   
