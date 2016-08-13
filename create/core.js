@@ -8,7 +8,7 @@ loadMap = false;
 var tileSize = 32;
 var trs = [];
 var tds = [];
-var editor;
+var editor, tbody;
 
 var onSizeChanged = function() {};
 
@@ -43,7 +43,6 @@ function removeLastChild(elem) {
   elem.removeChild(elem.childNodes[elem.childNodes.length-1]);
 }
 function actualiseTable() {
-  var tbody = editor.childNodes[1];
   trs = [];
   tds = [];
   for (var i = 0; i < tbody.childNodes.length; i++) {
@@ -61,7 +60,6 @@ function actualiseTable() {
 
 function changeSize() { //the size changing function (handle the map and the selector)
   actualiseTable();
-  var tbody = editor.childNodes[1]; //in a fishy way, tbody is the second child
   w = document.getElementById('width').value;
   h = document.getElementById('height').value;
   
@@ -102,7 +100,7 @@ function changeSize() { //the size changing function (handle the map and the sel
     var yelem = document.getElementById("y-"+i);
     if (w<ow) {
       map[i] = map[i].slice(0, w);
-    } else {
+    } else if (w>ow) {
       if (typeof map[i] == "undefined") {
         map[i] = [];
         for (var j = 0; j < w; j++) {
@@ -169,5 +167,6 @@ function draw() {
 }
 window.addEventListener('load', function() {
   editor = document.getElementById("editor");
+  tbody = document.getElementById("editor-body")
   firstUpdate();
 });

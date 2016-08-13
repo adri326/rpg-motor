@@ -47,8 +47,7 @@ $player = sprintf('%04d', $_GET['player']);
         <canvas id="canvas" width="512px" height="512px"></canvas>
       </td>
       <td>
-        <table class="editor" id="editor">
-        <?php
+        <table class="editor" id="editor"><tbody id="editor-body"><?php
           for ($y = 0; $y < $_GET['height']; $y++) {
             echo '<tr id="y-'.$y.'">';
             for ($x = 0; $x < $_GET['width']; $x++) {
@@ -60,8 +59,7 @@ $player = sprintf('%04d', $_GET['player']);
             }
             echo '</tr>';
           }
-        ?>
-        </table>
+        ?></tbody></table>
       </td></tr><tr class="canvas-container-bottom"><td>
         <form>
           <textarea id="newValue" value=""></textarea>
