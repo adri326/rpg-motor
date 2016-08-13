@@ -89,8 +89,8 @@ function changeSize() { //the size changing function (handle the map and the sel
         var img = document.createElement("img");
         img.src = "../"+setup.imageset+"/0.png";
         img.id = i+"-"+j;
-        img.setAttribute("onclick", "selectSquare("+y+", "+x+");");
-        img.setAttribute("ondblclick", "selectAll("+y+", "+x+");");
+        img.setAttribute("onclick", "selectSquare("+i+", "+j+");");
+        img.setAttribute("ondblclick", "selectAll("+i+", "+j+");");
         tds[i][j].appendChild(img);
         trs[i].appendChild(tds[i][j]);
       }
@@ -127,8 +127,8 @@ function changeSize() { //the size changing function (handle the map and the sel
         var img = document.createElement("img");
         img.src = "../"+setup.imageset+"/0.png";
         img.id = i+"-"+j;
-        img.setAttribute("onclick", "selectSquare("+y+", "+x+");");
-        img.setAttribute("ondblclick", "selectAll("+y+", "+x+");");
+        img.setAttribute("onclick", "selectSquare("+i+", "+j+");");
+        img.setAttribute("ondblclick", "selectAll("+i+", "+j+");");
         tds[i][j].appendChild(img);
         trs[i].appendChild(tds[i][j]);
       }
