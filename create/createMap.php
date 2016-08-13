@@ -37,41 +37,37 @@ $player = sprintf('%04d', $_GET['player']);
     <script src="../drawMap.js"></script>
     <script src="core.js"></script>
     <script src="../tilesReader.js"></script>
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="create.css" />
   </head>
   <body>
     <div id="mapContainer">
-      <table><tbody><tr>
-        <td rowspan="2">
-          <canvas id="canvas" width="512px" height="512px" class="noblur"></canvas>
-        </td>
-        <td>
-          <table class="editor">
-          <?php
-            for ($y = 0; $y < 4; $y++) {
-              echo '<tr>';
-              for ($x = 0; $x < 4; $x++) {
-                echo '<td id="';
-                echo $y.'-'.$x.'-td';
-                echo '"><img id="';
-                echo $y.'-'.$x;
-                echo '" src="../ressources/images/theme/basic-16/0.png" alt="0"';
-                echo 'onclick="selectSquare('.$y.', '.$x.');" /></td>';
-              }
-              echo '</tr>';
+      <table><tbody><tr class="canvas-container-top">
+      <td rowspan="2">
+        <canvas id="canvas" width="512px" height="512px"></canvas>
+      </td>
+      <td>
+        <table class="editor" id="editor">
+        <?php
+          for ($y = 0; $y < $_GET['height']; $y++) {
+            echo '<tr id="y-'.$y.'">';
+            for ($x = 0; $x < $_GET['width']; $x++) {
+              echo '<td id="x-'.$x.'"><img id="';
+              echo $y.'-'.$x;
+              echo '" src="../ressources/images/theme/basic-16/0.png" alt="0"';
+              echo 'onclick="selectSquare('.$y.', '.$x.');"';
+              echo 'ondblclick="selectAll('.$y.', '.$x.');" /></td>';
             }
-          ?>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <form>
-            <textarea id="newValue" value=""></textarea>
-            <div class="button" onclick="changeValue(); draw();">Save</div>
-          </form>
-        </td>
-      </tr>
+            echo '</tr>';
+          }
+        ?>
+        </table>
+      </td></tr><tr class="canvas-container-bottom"><td>
+        <form>
+          <textarea id="newValue" value=""></textarea>
+          <div class="button" onclick="changeValue(); draw();">Save</div>
+        </form>
+      </td></tr>
       </tr></tbody></table>
     </div>
     <div id="setupContainer">
@@ -89,7 +85,7 @@ $player = sprintf('%04d', $_GET['player']);
         </form>
       </td></tr></tbody></table>
     </div>
-    <ul id="tilesPreview">
+    <ul id="tilesList">
       
     </ul>
   </body>
