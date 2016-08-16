@@ -66,3 +66,9 @@ Any help is welcome!
 ##How does it looks like now?
 
 You can find a preview here : http://adri326.890m.com/rpg/?party=1
+
+
+
+##That wasn't enough informations?
+
+If you find this is not enough, then check the [wiki](https://github.com/adri326/rpg-motor/wiki)!
